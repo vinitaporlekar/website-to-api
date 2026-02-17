@@ -1,19 +1,13 @@
 import { useState } from 'react';
 import { Loader2, Plus } from 'lucide-react';
 
-interface URLInputProps {
-  onSubmit: (url: string) => Promise<void>;
-  isLoading: boolean;
-}
-
-export function URLInput({ onSubmit, isLoading }: URLInputProps) {
+export function URLInput({ onSubmit, isLoading }: any) {
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = async () => {
     setError('');
 
-    // Basic URL validation
     if (!url) {
       setError('Please enter a URL');
       return;
@@ -75,4 +69,3 @@ export function URLInput({ onSubmit, isLoading }: URLInputProps) {
     </div>
   );
 }
- 
